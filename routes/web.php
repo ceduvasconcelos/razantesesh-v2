@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    dd(User::al());
+    dd(User::all());
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
