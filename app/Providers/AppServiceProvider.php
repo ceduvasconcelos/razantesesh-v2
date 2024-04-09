@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if($this->app->environment('production') || (bool) env('VERCEL_DEMO_MODE')) {
+        if($this->app->environment('production') || env('VERCEL_DEMO_MODE')) {
             URL::forceScheme('https');
         }
     }
