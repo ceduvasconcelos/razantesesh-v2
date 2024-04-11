@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { Link as InertiaLink } from '@inertiajs/vue3';
-import formatMoney from '@/utils/formatMoney';
-import AppNavigation from '@/Customer/Components/AppNavigation.vue';
+import AppNavigation from '@/Admin/Components/AppNavigation.vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import ToggleTheme from '@/Components/ToggleTheme.vue';
 
@@ -12,7 +11,7 @@ const appNavigation = ref(false);
 <template>
     <v-app-bar flat density="compact" class="border-b">
         <template #prepend>
-            <inertia-link :href="route('customer.home')" class="mt-auto mr-2">
+            <inertia-link :href="route('admin.dashboard')" class="mt-auto mr-2">
                 <application-logo></application-logo>
             </inertia-link>
 
@@ -24,22 +23,6 @@ const appNavigation = ref(false);
 
         <template #append>
             <toggle-theme class="mr-md-4"></toggle-theme>
-
-            <!-- <inertia-link :href="route('customer.cart.index')" class="rounded-lg"> -->
-                <v-btn rounded="lg">
-                    <v-badge
-                        color="error"
-                        :content="0"
-                        bordered
-                        offset-x="-2"
-                        offset-y="-2"
-                    >
-                        <v-icon size="large" icon="mdi-cart-outline" />
-                    </v-badge>
-
-                    <span class="ms-4">{{ formatMoney(0) }}</span>
-                </v-btn>
-            <!-- </inertia-link> -->
         </template>
     </v-app-bar>
 

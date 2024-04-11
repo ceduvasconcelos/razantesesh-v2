@@ -22,8 +22,8 @@ defineEmits(['update:model-value'])
         class="border-r"
     >
         <v-list density="compact" :lines="false" nav>
-            <inertia-link :href="route('customer.home')">
-                <v-list-item title="Início" to="/"></v-list-item>
+            <inertia-link :href="route('admin.dashboard')">
+                <v-list-item title="Dashboard" to="/"></v-list-item>
             </inertia-link>
         </v-list>
     </v-navigation-drawer>
