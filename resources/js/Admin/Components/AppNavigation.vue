@@ -1,14 +1,14 @@
 <script setup>
-import { Link as InertiaLink } from '@inertiajs/vue3'
+import { Link as InertiaLink } from '@inertiajs/vue3';
 
 defineProps({
     modelValue: {
         type: Boolean,
         required: true
     }
-})
+});
 
-defineEmits(['update:model-value'])
+defineEmits(['update:model-value']);
 </script>
 
 <template>

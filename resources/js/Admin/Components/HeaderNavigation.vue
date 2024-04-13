@@ -1,21 +1,36 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { Link as InertiaLink } from '@inertiajs/vue3';
+import { useDisplay } from 'vuetify';
 import AppNavigation from '@/Admin/Components/AppNavigation.vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import ToggleTheme from '@/Components/ToggleTheme.vue';
 
+const { mdAndDown } = useDisplay();
+
 const appNavigation = ref(false);
+
+watch(
+    mdAndDown,
+    mdAndDown => {
+        appNavigation.value = mdAndDown ? appNavigation.value : true;
+    }
+);
 </script>
 
 <template>
-    <v-app-bar flat density="compact" class="border-b">
+    <v-app-bar
+        flat
+        density="compact"
+        class="border-b"
+    >
         <template #prepend>
             <inertia-link :href="route('admin.dashboard')" class="mt-auto mr-2">
                 <application-logo></application-logo>
             </inertia-link>
 
             <v-app-bar-nav-icon
+                v-if="mdAndDown"
                 density="comfortable"
                 @click="appNavigation = ! appNavigation"
             ></v-app-bar-nav-icon>
