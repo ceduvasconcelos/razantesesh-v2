@@ -10,7 +10,11 @@ const appNavigation = ref(false);
 </script>
 
 <template>
-    <v-app-bar flat density="compact" class="border-b">
+    <v-app-bar
+        flat
+        density="compact"
+        class="border-b px-4"
+    >
         <template #prepend>
             <inertia-link :href="route('customer.home')" class="mt-auto mr-2">
                 <application-logo></application-logo>
@@ -43,5 +47,5 @@ const appNavigation = ref(false);
         </template>
     </v-app-bar>
 
-  <app-navigation v-model="appNavigation"></app-navigation>
+    <app-navigation v-model="appNavigation"></app-navigation>
 </template>

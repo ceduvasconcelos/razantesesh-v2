@@ -1,8 +1,8 @@
 <script setup>
 import { Head as InertiaHead } from '@inertiajs/vue3';
-import BaseLayout from '@/Admin/Layouts/AuthenticatedLayout.vue';
+import GuestLayout from '@/Admin/Layouts/AuthenticatedLayout.vue';
 
-defineOptions({ layout: BaseLayout });
+defineOptions({ layout: GuestLayout });
 </script>
 
 <template>

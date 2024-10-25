@@ -8,7 +8,7 @@ import ToggleTheme from '@/Components/ToggleTheme.vue';
 
 const { mdAndDown } = useDisplay();
 
-const appNavigation = ref(false);
+const appNavigation = ref(mdAndDown.value ? false : true);
 
 watch(
     mdAndDown,
@@ -22,7 +22,7 @@ watch(
     <v-app-bar
         flat
         density="compact"
-        class="border-b"
+        class="border-b px-4"
     >
         <template #prepend>
             <inertia-link :href="route('admin.dashboard')" class="mt-auto mr-2">
@@ -38,6 +38,10 @@ watch(
 
         <template #append>
             <toggle-theme class="mr-md-4"></toggle-theme>
+
+            <inertia-link :href="route('admin.logout')" method="post" as="button">
+                Sair
+            </inertia-link>
         </template>
     </v-app-bar>
 
